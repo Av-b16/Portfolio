@@ -269,10 +269,11 @@
     </section>
 
     
-    <section id="contact" class="p-12 scroll-mt-20" data-aos="fade-up">
+    <!-- <section id="contact" class="p-12 scroll-mt-20" data-aos="fade-up">
       <h2 class="text-3xl font-semibold">Contact</h2>
       <p class="text-brown-400 mt-4">Reach out via email or LinkedIn.</p>
-      <form class="mt-4">
+
+      <form class="mt-4" action="https://formspree.io/f/mgvopbvd" method="POST" class="max-w-xl mx-auto">
         <input
           type="text"
           placeholder="Your Name"
@@ -293,7 +294,42 @@
           Send Message
         </button>
       </form>
+    </section> -->
+
+    <section id="contact" class="p-12 scroll-mt-20" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold">Contact</h2>
+      <p class="text-brown-400 mt-4">Reach out via email or LinkedIn.</p>
+    
+      <form class="mt-4 max-w-xl mx-auto" action="https://formspree.io/f/mgvopbvd" method="POST">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          class="w-full p-3 bg-brown-700 text-black rounded mb-3"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          class="w-full p-3 bg-brown-700 text-black rounded mb-3"
+          required
+        />
+        <textarea
+  name="message"
+  placeholder="Your Message"
+  class="w-full p-3 bg-brown-700 text-black rounded mb-3"
+  required
+></textarea>
+        <button
+          type="submit"
+          class="bg-yellow-600 px-6 py-3 rounded hover:bg-yellow-500 transition duration-300 transform hover:scale-105"
+        >
+          Send Message
+        </button>
+      </form>
     </section>
+    
 
     <!-- 🔹 Footer -->
     <footer class="text-center p-6 bg-brown-800">
