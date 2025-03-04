@@ -41,7 +41,7 @@ body {
 
 /* Sections */
 .section {
-    height: 100vh;
+    min-height: 100vh; /* Ensure sections take at least the full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +71,8 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 400px; /* Limit form width for better readability */
     margin-top: 10px;
 }
 
@@ -103,4 +104,123 @@ body {
 .reveal {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Screen (up to 640px) */
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        font-size: 0.1rem;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contact-form {
+        width: 90%; /* Make form slightly smaller on small screens */
+    }
+
+    .btn {
+        padding: 12px 25px;
+    }
+
+    .section h2 {
+        font-size: 28px; /* Smaller heading for small screens */
+    }
+}
+
+/* Medium Screen (640px to 768px) - Tablet */
+@media (min-width: 640px) and (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 1.1rem;
+    }
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .contact-form {
+        width: 80%; /* Wider form for tablets */
+    }
+
+    .btn {
+        padding: 12px 25px;
+    }
+
+    .section h2 {
+        font-size: 32px; /* Slightly larger heading for tablets */
+    }
+
+    .section {
+        padding: 40px; /* Add more padding for better spacing */
+    }
+}
+
+/* Large Screen (768px and up) */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 20px 50px;
+    }
+
+    .nav-links a {
+        margin: 0 20px;
+        font-size: 1.25rem;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contact-form {
+        width: 400px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+    }
+
+    .section h2 {
+        font-size: 36px; /* Restore original heading size */
+    }
+}
+
+/* Extra Large Screen (1024px and up) */
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 20px 80px;
+    }
+
+    .nav-links a {
+        margin: 0 25px;
+        font-size: 1.5rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-form {
+        width: 450px;
+    }
+
+    .btn {
+        padding: 18px 35px;
+    }
 }
