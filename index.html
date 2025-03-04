@@ -84,38 +84,60 @@
       </div>
       <!-- <button class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition">Resume</button> -->
       <!-- Resume Button -->
-      <button
-        onclick="openResumeModal()"
-        class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-400 transition transform hover:scale-105"
-      >
-        Resume
-      </button>
+      <!-- Resume Button -->
+<!-- Button to Open Resume Modal -->
+<button onclick="openResumeModal()" 
+    class="bg-yellow-600 px-6 py-3 rounded hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+    View Resume
+</button>
 
-      <!-- Resume Modal -->
-      <div
-        id="resumeModal"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
-      >
-        <div
-          class="bg-white w-11/12 md:w-3/4 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
-        >
-          <!-- Close Button -->
-          <button
-            onclick="closeResumeModal()"
-            class="absolute top-2 right-2 text-gray-800 hover:text-red-500 text-xl"
-          >
-            &times;
-          </button>
+<!-- Resume Modal -->
+<div id="resumeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg relative">
+        <h2 class="text-xl font-bold mb-4">My Resume</h2>
 
-          <h2 class="text-xl font-semibold text-brown-900 mb-4">My Resume</h2>
+        <!-- View Resume in a new tab -->
+        <iframe id="resumeFrame" src="" width="100%" height="400px"></iframe>
 
-          <!-- Embedded PDF -->
-          <iframe
-            src="assets/AvantikaRathi-MSres.pdf"
-            class="w-full h-96"
-          ></iframe>
+        <div class="flex justify-between mt-4 space-x-4">
+            <!-- Close Modal Button -->
+            <button onclick="closeResumeModal()" 
+                class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-400 transition">
+                Close
+            </button>
+
+            <!-- View in New Tab -->
+            <a id="viewInNewTab" href="#" target="_blank"
+               class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-400 transition">
+               Full View
+            </a>
+
+            <!-- Download Resume Button -->
+            <a id="downloadResume" href="#" download="Avantika_Rathi_Resume.pdf"
+               class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400 transition">
+               Download Resume
+            </a>
         </div>
-      </div>
+    </div>
+</div>
+
+<script>
+    const resumeUrl = "assets/AvantikaRathi_resume.pdf"; // Change this if needed
+
+    function openResumeModal() {
+        document.getElementById("resumeModal").classList.remove("hidden");
+        document.getElementById("resumeFrame").src = resumeUrl;
+        document.getElementById("viewInNewTab").href = resumeUrl;
+        document.getElementById("downloadResume").href = resumeUrl;
+    }
+
+    function closeResumeModal() {
+        document.getElementById("resumeModal").classList.add("hidden");
+        document.getElementById("resumeFrame").src = ""; // Clear the iframe to stop loading
+    }
+</script>
+
+
     </nav>
 
     <!-- 🔹 Hero Section -->
@@ -124,7 +146,7 @@
     >
     <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg transition-transform transform hover:scale-105">
       <img
-        src="assets/profile-photo.jpg"
+        src="assets/profile.jpg"
         alt="Profile"
         class="w-full h-full object-cover"
         data-aos="fade-right"
